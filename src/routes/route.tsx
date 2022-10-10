@@ -12,16 +12,16 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "cms",
+        path: "/cms",
         element: <CMS />,
         children: [
           {
-            path: "./article-manage",
+            path: "/cms/article-manage",
             element: <ArticleManage />,
             children: [],
           },
           {
-            path: "./category",
+            path: "/cms/category",
             element: <Category />,
           },
           {

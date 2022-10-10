@@ -6,6 +6,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "~": "./node_modules/",
+      "src":"./src"
     },
   },
 });

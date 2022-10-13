@@ -14,7 +14,8 @@ import {
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, MenuProps } from "antd";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
+import Home from "../home/home.page";
 import "./cms.page.css";
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -34,13 +35,30 @@ function getItem(
   } as MenuItem;
 }
 const items: MenuItem[] = [
-  getItem(<Link to="article-manage">文档管理</Link>, "article-manage", <AppstoreOutlined />, [
-    getItem(<Link to="edit">编辑</Link>, "edit", <EditOutlined />),
-    getItem(<Link to="draft">草稿</Link>, "draft", <CopyOutlined />),
-    getItem(<Link to="article">所有文章</Link>, "article", <DesktopOutlined />),
-  ]),
+  getItem(
+    <Link to="article-manage">文档管理</Link>,
+    "article-manage",
+    <AppstoreOutlined />,
+    [
+      getItem(
+        <Link to="article-manage/edit">编辑</Link>,
+        "edit",
+        <EditOutlined />
+      ),
+      getItem(
+        <Link to="article-manage/draft">草稿</Link>,
+        "draft",
+        <CopyOutlined />
+      ),
+      getItem(
+        <Link to="article-manage/article">所有文章</Link>,
+        "article",
+        <DesktopOutlined />
+      ),
+    ]
+  ),
   getItem(<Link to="category">分类</Link>, "category", <NumberOutlined />),
-  getItem(<Link to="tag">标签</Link>, "tag", <TagsOutlined />),
+  getItem(<Link to="tags">标签</Link>, "tag", <TagsOutlined />),
 ];
 export default function CMS() {
   const [collapsed, setCollapsed] = useState(false);
@@ -72,7 +90,7 @@ export default function CMS() {
               className="site-layout-background"
               style={{ padding: 24, minHeight: 360 }}
             >
-              Bill is a cat.
+              <Outlet />
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>

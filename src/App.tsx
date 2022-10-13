@@ -1,17 +1,17 @@
-import { RouterProvider, Outlet } from "react-router-dom";
-import router from "./routes/route";
-
+import { RouterProvider, Outlet, Route, Routes } from "react-router-dom";
+import CMS from "./pages/cms/cms.page";
+import Home from "./pages/home/home.page";
+import router from './routers/router'
 const App: React.FC = () => {
   return (
     <>
       <div className="w-full h-full">
-          <RouterProvider router={router} />
-          {/* <Routes>
-            <Route path="/" element={<Root />}></Route>
-            <Route path="/cms" element={<CMS />}></Route>
-            <Route path="/home" element={<Home />}></Route>
-          </Routes> */}
-        <Outlet></Outlet>
+        {/* <Routes>
+          <Route path="/" element={<CMS />}></Route>
+          <Route path="/cms" element={<CMS />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+        </Routes>
+        <Outlet></Outlet> */}
       </div>
     </>
   );

@@ -1,9 +1,10 @@
 
 
-const Tag:React.FC = ()=>{
+const Tags:React.FC = ()=>{
     return (
-        <></>
+        <>
+        <p>Tags</p></>
     )
 }
 
-export default Tag;
+export default Tags;

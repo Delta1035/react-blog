@@ -1,9 +1,9 @@
+const Draft: React.FC = () => {
+  return (
+    <>
+      <p>Draft </p>
+    </>
+  );
+};
 
-
-const Darft:React.FC = ()=>{
-    return (
-        <></>
-    )
-}
-
-export default Darft;
+export default Draft;

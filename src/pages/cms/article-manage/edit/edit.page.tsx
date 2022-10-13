@@ -2,7 +2,9 @@
 
 const Edit:React.FC = ()=>{
     return (
-        <></>
+        <>
+        <p>
+        Edit</p></>
     )
 }
 

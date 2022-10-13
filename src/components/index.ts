@@ -1,0 +1,1 @@
+export * as FullContainer from './full-container.component'

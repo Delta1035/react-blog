@@ -1,7 +1,3 @@
-import { RouterProvider, Outlet, Route, Routes } from "react-router-dom";
-import CMS from "./pages/cms/cms.page";
-import Home from "./pages/home/home.page";
-import router from './routers/router'
 const App: React.FC = () => {
   return (
     <>

@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+    - main
+    - release/*
+    
+    
+jobs:
+  first_job:
+    name: "这是第一个job"
+    runs-on: ubuntu-20.04
+    steps:
+    - name: "第二个job"
+      run: echo "这是执行的命令"

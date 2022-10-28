@@ -14,6 +14,9 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+        cache: "npm"
     - name: "show nodejs version"
       run: node -v
+    - name: install dependency
+      run: npm i
       

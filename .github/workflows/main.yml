@@ -11,12 +11,15 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 7.14.0
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-        cache: "npm"
+        cache: "pnpm"
     - name: "show nodejs version"
       run: node -v
     - name: install dependency
-      run: npm i
+      run: pnpm install --frozen-lockfile
       

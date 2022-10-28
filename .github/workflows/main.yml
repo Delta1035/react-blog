@@ -16,7 +16,7 @@ jobs:
         version: 7.14.0
     - uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 14.17.6
         cache: "pnpm"
     - name: "show nodejs version"
       run: node -v

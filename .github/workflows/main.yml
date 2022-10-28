@@ -16,12 +16,14 @@ jobs:
         version: 7.14.0
     - uses: actions/setup-node@v3
       with:
-        node-version: 16
-        cache: "pnpm"
+        node-version: 14.17.6
+#         cache: "pnpm"
+#         cache: "npm"
     - name: "show nodejs version"
       run: node -v
     - name: install dependency
-      run: pnpm install --no-frozen-lockfile
+#       run: pnpm install --no-frozen-lockfile
+      run: npm i
     - name: run build
       run: npm run build
     - name: show secret variable

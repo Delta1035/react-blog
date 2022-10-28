@@ -7,8 +7,14 @@ on:
     
 jobs:
   first_job:
-    name: "这是第一个job"
+    name: deploy blog
     runs-on: ubuntu-20.04
+
     steps:
-    - name: "第二个job"
-      run: echo "这是执行的命令"
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: "show nodejs version"
+      run: echo node -v
+      

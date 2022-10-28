@@ -25,9 +25,9 @@ jobs:
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v2.0.0
       with:
-          host: ${{ftp.FTP_HOST}}
-          user: ${{ftp.FTP_HOST}}
-          password: ${{ftp.FTP_HOST}}
+          host: ${{FTP_HOST}}
+          user: ${{FTP_HOST}}
+          password: ${{FTP_HOST}}
           localDir: "dist"
           remoteDir: "react-blog"
       

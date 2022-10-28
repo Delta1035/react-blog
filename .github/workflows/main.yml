@@ -21,7 +21,7 @@ jobs:
     - name: "show nodejs version"
       run: node -v
     - name: install dependency
-      run: pnpm install --frozen-lockfile'
+      run: pnpm install --no-frozen-lockfile'
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v2.0.0
       with:

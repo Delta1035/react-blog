@@ -7,7 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "./node_modules/"),
-      src: path.resolve(__dirname, "./src"),
+      "src": path.resolve(__dirname, "./src"),
     },
   },
 });

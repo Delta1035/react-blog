@@ -17,18 +17,23 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-#         cache: "pnpm"
+        cache: "pnpm"
     - name: "show nodejs version"
       run: node -v
     - name: install dependency
       run: pnpm install --no-frozen-lockfile
-#       run: pnpm install --no-frozen-lockfile
+    - name: show secret variable
+      run: 
+        | 
+        echo ${{secrets.FTP_HOST}}
+        echo ${{secrets.FTP_USER}}
+        echo ${{secrets.FTP_PASSWORD}}
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v2.0.0
       with:
           host: ${{secrets.FTP_HOST}}
-          user: ${{secrets.FTP_HOST}}
-          password: ${{secrets.FTP_HOST}}
+          user: ${{secrets.FTP_USER}}
+          password: ${{secrets.FTP_PASSWORD}}
           localDir: "dist"
           remoteDir: "react-blog"
       

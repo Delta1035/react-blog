@@ -32,6 +32,9 @@ jobs:
         echo ${{secrets.FTP_HOST}}
         echo ${{secrets.FTP_USER}}
         echo ${{secrets.FTP_PASSWORD}}
+        echo ${{secrets.ftp.FTP_PASSWORD}}
+        echo ${{secrets.HOST}}
+        echo ${{HOST}}
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v2.0.0
       with:

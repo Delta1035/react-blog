@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "src/app";
+import App from "src/App";
 import About from "src/pages/about/about";
 import ArticleManage from "src/pages/cms/article-manage/article-manage.page";
 import Article from "src/pages/cms/article-manage/article/article";

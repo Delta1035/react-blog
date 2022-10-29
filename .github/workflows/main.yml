@@ -34,12 +34,14 @@ jobs:
         echo ${{secrets.FTP_PASSWORD}}
         echo ${{secrets.ftp.FTP_PASSWORD}}
         echo ${{secrets.HOST}}
+        echo ${{secrets.USER}}
+        echo ${{secrets.PASSWORD}}
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v2.0.0
       with:
-          host: ${{secrets.FTP_HOST}}
-          user: ${{secrets.FTP_USER}}
-          password: ${{secrets.FTP_PASSWORD}}
+          host: ${{secrets.HOST}}
+          user: ${{secrets.USER}}
+          password: ${{secrets.PASSWORD}}
           localDir: "dist"
           remoteDir: "react-blog"
       

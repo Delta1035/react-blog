@@ -8,7 +8,7 @@ on:
 jobs:
   install_dependency_job:
     name: deploy blog
-    runs-on: windows-2019
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: pnpm/action-setup@v2
@@ -17,13 +17,13 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 14.17.6
-#         cache: "pnpm"
+        cache: "pnpm"
 #         cache: "npm"
     - name: "show nodejs version"
       run: node -v
     - name: install dependency
-#       run: pnpm install --no-frozen-lockfile
-      run: npm i
+      run: pnpm install --no-frozen-lockfile
+      # run: npm i
     - name: run build
       run: npm run build
     - name: show secret variable

@@ -8,7 +8,7 @@ on:
 jobs:
   install_dependency_job:
     name: deploy blog
-    runs-on: ubuntu-20.04
+    runs-on: windows-2019
     steps:
     - uses: actions/checkout@v3
     - uses: pnpm/action-setup@v2

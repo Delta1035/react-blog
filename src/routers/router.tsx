@@ -8,6 +8,7 @@ import Edit from "src/pages/cms/article-manage/edit/edit.page";
 import Category from "src/pages/cms/category/category.page";
 import CMS from "src/pages/cms/cms.page";
 import Tags from "src/pages/cms/tag/tag.page";
+import Three from "src/pages/cms/three/three.page";
 import ErrorPage from "src/pages/error.page";
 import Home from "src/pages/home/home.page";
 import Login from "src/pages/login/login";
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "tags",
         element: <Tags />,
+      },
+      {
+        path: "three",
+        element: <Three />,
       },
     ],
   },

@@ -54,11 +54,12 @@ const items: MenuItem[] = [
         <Link to="article-manage/article">所有文章</Link>,
         "article",
         <DesktopOutlined />
-      ),
+      )
     ]
   ),
   getItem(<Link to="category">分类</Link>, "category", <NumberOutlined />),
   getItem(<Link to="tags">标签</Link>, "tag", <TagsOutlined />),
+  getItem(<Link to="three">three.js demo</Link>, "three", <TagsOutlined />),
 ];
 export default function CMS() {
   const [collapsed, setCollapsed] = useState(false);

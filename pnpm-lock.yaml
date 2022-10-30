@@ -24,14 +24,12 @@ specifiers:
   rehype-rewrite: ^3.0.6
   sort-by: ^1.2.0
   tailwindcss: ^3.1.8
+  three: ^0.146.0
   typescript: ^4.6.4
   vite: ^3.1.0
 
 dependencies:
   '@ant-design/icons': 4.7.0_biqbaboplfbrettd7655fr4n2y
-  '@types/katex': 0.14.0
-  '@types/mermaid': 9.1.0
-  '@types/node': 18.11.2
   '@uiw/react-md-editor': 3.19.0_rj7ozvcq3uehdlnj3cbwzbi5ce
   antd: 4.23.6_biqbaboplfbrettd7655fr4n2y
   axios: 1.1.3
@@ -45,14 +43,18 @@ dependencies:
   react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
   rehype-rewrite: 3.0.6
   sort-by: 1.2.0
+  three: 0.146.0
 
 devDependencies:
+  '@types/katex': 0.14.0
+  '@types/mermaid': 9.1.0
+  '@types/node': 18.11.2
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   '@vitejs/plugin-react': 2.1.0_vite@3.1.8
   autoprefixer: 10.4.12_postcss@8.4.18
   postcss: 8.4.18
-  tailwindcss: 3.2.0
+  tailwindcss: 3.2.0_postcss@8.4.18
   typescript: 4.8.4
   vite: 3.1.8
 
@@ -476,7 +478,7 @@ packages:
 
   /@types/katex/0.14.0:
     resolution: {integrity: sha512-+2FW2CcT0K3P+JMR8YG846bmDwplKUTsWgT2ENwdQ1UdVfRk3GQrh6Mi4sTopy30gI8Uau5CEqHTDZ6YvWIUPA==}
-    dev: false
+    dev: true
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
@@ -486,7 +488,7 @@ packages:
 
   /@types/mermaid/9.1.0:
     resolution: {integrity: sha512-rc8QqhveKAY7PouzY/p8ljS+eBSNCv7o79L97RSub/Ic2SQ34ph1Ng3s8wFLWVjvaEt6RLOWtSCsgYWd95NY8A==}
-    dev: false
+    dev: true
 
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
@@ -494,7 +496,7 @@ packages:
 
   /@types/node/18.11.2:
     resolution: {integrity: sha512-BWN3M23gLO2jVG8g/XHIRFWiiV4/GckeFIqbU/C4V3xpoBBWSMk4OZomouN0wCkfQFPqgZikyLr7DOYDysIkkw==}
-    dev: false
+    dev: true
 
   /@types/parse5/6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
@@ -3589,10 +3591,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.2.0:
+  /tailwindcss/3.2.0_postcss@8.4.18:
     resolution: {integrity: sha512-ARh/W0uH5UlWIC2nn02V0+5fyF0k6qZliyt4QYic2upOhPUE/Spu1EURNc9txJ3+4j8OEmdigqfDpw4d2tA4vA==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
@@ -3619,6 +3623,10 @@ packages:
     transitivePeerDependencies:
       - ts-node
     dev: true
+
+  /three/0.146.0:
+    resolution: {integrity: sha512-1lvNfLezN6OJ9NaFAhfX4sm5e9YCzHtaRgZ1+B4C+Hv6TibRMsuBAM5/wVKzxjpYIlMymvgsHEFrrigEfXnb2A==}
+    dev: false
 
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}

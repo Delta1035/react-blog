@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
 import App from "src/App";
 import About from "src/pages/about/about";
 import ArticleManage from "src/pages/cms/article-manage/article-manage.page";
@@ -17,7 +17,8 @@ import Register from "src/pages/register/register";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    // element: <App />,
+    element: <Navigate to={'/cms'} />,
     errorElement: <ErrorPage />,
   },
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
     path: "/cms",
     element: <CMS />,
     children: [
+      {
+        path:'',
+        element:<Navigate to={'three'} />
+      },
       {
         path: "article-manage",
         element: <ArticleManage />,
@@ -65,6 +70,7 @@ const router = createBrowserRouter([
       {
         path: "three",
         element: <Three />,
+        index:true
       },
     ],
   },

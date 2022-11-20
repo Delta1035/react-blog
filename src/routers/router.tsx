@@ -1,5 +1,4 @@
 import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
-import App from "src/App";
 import About from "src/pages/about/about";
 import ArticleManage from "src/pages/cms/article-manage/article-manage.page";
 import Article from "src/pages/cms/article-manage/article/article";
@@ -18,7 +17,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     // element: <App />,
-    element: <Navigate to={'/cms'} />,
+    element: <Navigate to={"/cms"} />,
     errorElement: <ErrorPage />,
   },
   {
@@ -38,8 +37,8 @@ const router = createBrowserRouter([
     element: <CMS />,
     children: [
       {
-        path:'',
-        element:<Navigate to={'three'} />
+        path: "",
+        element: <Navigate to={"three"} />,
       },
       {
         path: "article-manage",
@@ -70,7 +69,7 @@ const router = createBrowserRouter([
       {
         path: "three",
         element: <Three />,
-        index:true
+        index: true,
       },
     ],
   },

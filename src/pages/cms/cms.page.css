@@ -11,3 +11,8 @@
 .site-layout-background {
   background: #fff;
 }
+
+.cms-content{
+  width: 100%;
+  height: 100%;
+}

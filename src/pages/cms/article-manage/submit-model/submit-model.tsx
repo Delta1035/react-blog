@@ -1,6 +1,5 @@
 import { Modal } from "antd";
 import React, { useState } from "react";
-import "./submit-model.css";
 
 const SubmitModel: React.FC<any> = (isModalOpen:boolean,setIsModalOpen) => {
     // const [isModalOpen, setIsModalOpen] = useState(false);

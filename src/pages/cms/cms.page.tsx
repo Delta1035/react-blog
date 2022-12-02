@@ -3,21 +3,14 @@ import {
   CopyOutlined,
   DesktopOutlined,
   EditOutlined,
-  FileOutlined,
   NumberOutlined,
-  PieChartOutlined,
   TagsOutlined,
-  TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, MenuProps } from "antd";
+import { Layout, Menu, MenuProps } from "antd";
 import React, { useState } from "react";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
-import Home from "../home/home.page";
+import { Link, Outlet } from "react-router-dom";
 import "./cms.page.css";
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -90,7 +83,8 @@ export default function CMS() {
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            DCMS ©2022 Created by <a href="https://github.com/Delta1035" target="_black">
+            DCMS ©2022 Created by{" "}
+            <a href="https://github.com/Delta1035" target="_black">
               Delta
             </a>
           </Footer>

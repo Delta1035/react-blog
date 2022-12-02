@@ -54,7 +54,7 @@ const items: MenuItem[] = [
         <Link to="article-manage/article">所有文章</Link>,
         "article",
         <DesktopOutlined />
-      )
+      ),
     ]
   ),
   getItem(<Link to="category">分类</Link>, "category", <NumberOutlined />),
@@ -81,21 +81,18 @@ export default function CMS() {
           />
         </Sider>
         <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }} />
-          <Content style={{ margin: "0 16px" }}>
-            {/* <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb> */}
+          <Content style={{ margin: "0 0px", overflowY: "scroll" }}>
             <div
-              className="site-layout-background mt-4 w-full h-full"
-              style={{ padding: 24, minHeight: 360 }}
+              className="cms-content"
+              style={{ padding: 24, minHeight: 350 }}
             >
               <Outlet />
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            DCMS ©2022 Created by Delta
+            DCMS ©2022 Created by <a href="https://github.com/Delta1035" target="_black">
+              Delta
+            </a>
           </Footer>
         </Layout>
       </Layout>

@@ -30,15 +30,11 @@ const Three: React.FC = () => {
   renderer.setSize(500, 100);
     // TODO 不渲染
   useEffect(() => {
-    console.log(
-      "container",
-      containerRef,
-      document.querySelector(".container")
-    );
     document.querySelector(".container")?.appendChild(renderer.domElement);
-  },[]);
+  },[containerRef]);
 
   return (
+    
     <>
       <p>Three</p>
       <div className="container" ref={containerRef}></div>

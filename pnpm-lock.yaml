@@ -25,6 +25,7 @@ specifiers:
   react-router-dom: ^6.4.2
   rehype-rewrite: ^3.0.6
   sort-by: ^1.2.0
+  style-component: ^0.0.1
   tailwindcss: ^3.1.8
   three: ^0.146.0
   typescript: ^4.6.4
@@ -46,6 +47,7 @@ dependencies:
   react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
   rehype-rewrite: 3.0.6
   sort-by: 1.2.0
+  style-component: 0.0.1
   three: 0.146.0
 
 devDependencies:
@@ -3616,6 +3618,10 @@ packages:
     dependencies:
       character-entities-html4: 2.1.0
       character-entities-legacy: 3.0.0
+    dev: false
+
+  /style-component/0.0.1:
+    resolution: {integrity: sha512-eQkse8gFYHFCpzdgCJNtT/k+c0qEM1G2bTZnLN4liWYJS66p2vsBMsnuJQDeSdDaNa61flxNSiZ88Lvp8puipA==}
     dev: false
 
   /style-to-object/0.3.0:

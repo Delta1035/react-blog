@@ -24,6 +24,7 @@
     "react-router-dom": "^6.4.2",
     "rehype-rewrite": "^3.0.6",
     "sort-by": "^1.2.0",
+    "style-component": "^0.0.1",
     "three": "^0.146.0"
   },
   "devDependencies": {

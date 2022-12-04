@@ -1,22 +1,21 @@
-import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
-import About from "src/pages/about/about";
-import ArticleManage from "src/pages/cms/article-manage/article-manage.page";
-import Article from "src/pages/cms/article-manage/article/article";
-import Draft from "src/pages/cms/article-manage/draft/draft.page";
-import Edit from "src/pages/cms/article-manage/edit/edit.page";
-import Category from "src/pages/cms/category/category.page";
-import CMS from "src/pages/cms/cms.page";
-import Tags from "src/pages/cms/tag/tag.page";
-import Three from "src/pages/cms/three/three.page";
-import ErrorPage from "src/pages/error.page";
-import Home from "src/pages/home/home.page";
-import Login from "src/pages/login/login";
-import Register from "src/pages/register/register";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import Register from "./shared/components/register";
+import ArticleManage from "./blog/cms/article-manage/article-manage.page";
+import Article from "./blog/cms/article-manage/article/article";
+import Draft from "./blog/cms/article-manage/draft/draft.page";
+import Edit from "./blog/cms/article-manage/edit/edit.page";
+import Category from "./blog/cms/category/category.page";
+import CMS from "./blog/cms/cms.page";
+import Tags from "./blog/cms/tag/tag.page";
+import Three from "./blog/cms/three/three.page";
+import About from "./shared/components/about";
+import Home from "./blog/home/home.page";
+import Login from "./shared/components/login";
+import ErrorPage from "./shared/components/error.page";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    // element: <App />,
     element: <Navigate to={"/cms"} />,
     errorElement: <ErrorPage />,
   },
@@ -74,7 +73,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "home",
+    path: "/home",
     element: <Home />,
   },
 ]);

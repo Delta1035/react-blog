@@ -1,10 +1,10 @@
-import Editor from "src/components/editor/editor";
+import Editor from "@src/shared/components/editor";
 
 const Edit: React.FC = () => {
   return (
     <>
       <div>
-        <Editor />
+        <Editor></Editor>
       </div>
     </>
   );

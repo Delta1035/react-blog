@@ -10,7 +10,8 @@ const Three: React.FC = () => {
   // 2. 创建相机
   const camera = new THREE.PerspectiveCamera(
     75,
-    window.innerWidth / window.innerHeight,
+    // window.innerWidth / window.innerHeight,
+    0.1,
     0.1,
     1000
   );
@@ -27,14 +28,17 @@ const Three: React.FC = () => {
   // 7. 创建渲染器
   const renderer = new THREE.WebGL1Renderer();
   // 8. 设置渲染尺寸
-  renderer.setSize(500, 100);
-    // TODO 不渲染
+  renderer.setSize(500, 500);
+  // TODO 不渲染
   useEffect(() => {
-    document.querySelector(".container")?.appendChild(renderer.domElement);
-  },[containerRef]);
-
+      document.querySelector(".container")?.appendChild(renderer.domElement);
+  }, [containerRef]);
+  function animate() {
+    requestAnimationFrame( animate );
+    renderer.render( scene, camera );
+  }
+  animate();
   return (
-    
     <>
       <p>Three</p>
       <div className="container" ref={containerRef}></div>

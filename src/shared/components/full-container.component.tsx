@@ -1,4 +1,4 @@
-const FullContainer: React.FC = (element) => {
+export const FullContainer: React.FC = (element) => {
     return (
       <>
         <div className=" h-full w-full">
@@ -7,4 +7,3 @@ const FullContainer: React.FC = (element) => {
     );
   };
   
-  export default FullContainer;

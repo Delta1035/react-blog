@@ -7,8 +7,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "./node_modules/"),
-      "src": path.resolve(__dirname, "./src"),
-      "assets": path.resolve(__dirname, "./assets"),
+      "@src": path.resolve(__dirname, "./src"),
+      "@assets": path.resolve(__dirname, "./assets"),
     },
   },
 });

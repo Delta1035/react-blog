@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@types/styled-components": "^5.1.26",
     "@uiw/react-md-editor": "^3.19.0",
     "antd": "^4.23.4",
     "axios": "^1.1.2",
@@ -24,7 +25,7 @@
     "react-router-dom": "^6.4.2",
     "rehype-rewrite": "^3.0.6",
     "sort-by": "^1.2.0",
-    "style-component": "^0.0.1",
+    "styled-components": "^5.3.6",
     "three": "^0.146.0"
   },
   "devDependencies": {

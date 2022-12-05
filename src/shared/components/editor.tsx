@@ -5,16 +5,17 @@ import { getCodeString } from 'rehype-rewrite';
 import katex from 'katex';
 import 'katex/dist/katex.css';
 
-const Editor: React.FC = (params: any) => {
+const Editor: React.FC<any> = (params:any) => {
   const { value, setValue } = params;
   const [_value, _setValue] = React.useState("**Hello world!!!**");
   const handleChange = ($event: any) => {
     console.log($event);
-    if (setValue) {
-      setValue($event);
-    } else {
-      _setValue($event);
-    }
+    setValue($event)
+    // if (value) {
+    //   setValue($event);
+    // } else {
+    //   _setValue($event);
+    // }
   };
 
   /** mermaid 解析流程图 */
@@ -70,7 +71,7 @@ const Editor: React.FC = (params: any) => {
       .join("");
   /** 解析数学公式 */
   return (
-    <div className="container">
+    <div>
       <MDEditor
         value={value ?? _value}
         onChange={handleChange}

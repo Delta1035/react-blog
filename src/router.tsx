@@ -1,5 +1,4 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Register from "./shared/components/register";
 import ArticleManage from "./blog/cms/article-manage/article-manage.page";
 import Article from "./blog/cms/article-manage/article/article";
 import Draft from "./blog/cms/article-manage/draft/draft.page";
@@ -8,10 +7,12 @@ import Category from "./blog/cms/category/category.page";
 import CMS from "./blog/cms/cms.page";
 import Tags from "./blog/cms/tag/tag.page";
 import Three from "./blog/cms/three/three.page";
-import About from "./shared/components/about";
 import Home from "./blog/home/home.page";
-import Login from "./shared/components/login";
-import ErrorPage from "./shared/components/error.page";
+import About from "./components/about";
+import ErrorPage from "./components/error.page";
+import Login from "./components/login";
+import Register from "./components/register";
+
 
 const router = createBrowserRouter([
   {

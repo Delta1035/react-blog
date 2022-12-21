@@ -44,4 +44,7 @@ jobs:
           password: ${{secrets.PASSWORD}}
           localDir: "dist"
           remoteDir: "react-blog"
+  login_server:
+    name: "login deploy server"
+    
       

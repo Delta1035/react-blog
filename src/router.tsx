@@ -13,7 +13,6 @@ import ErrorPage from "./components/error.page";
 import Login from "./components/login";
 import Register from "./components/register";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +37,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Navigate to={"three"} />,
+        element: <Navigate to={"article-manage"} />,
       },
       {
         path: "article-manage",
@@ -47,6 +46,7 @@ const router = createBrowserRouter([
           {
             path: "edit",
             element: <Edit />,
+            index: true,
           },
           {
             path: "draft",
@@ -69,7 +69,6 @@ const router = createBrowserRouter([
       {
         path: "three",
         element: <Three />,
-        index: true,
       },
     ],
   },

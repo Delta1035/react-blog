@@ -1,18 +1,26 @@
-import { Category } from "@src/blog/models/Category.model";
-import { Tag } from "@src/blog/models/Tag.model";
-import { api } from "@src/core/services/api.service";
-import { Button, Form, Input, Modal, Result, Select } from "antd";
-import React, {
-  ChangeEvent,
-  FormEvent,
-  RefObject,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { Category } from "@src/models/Category.model";
+import { Tag } from "@src/models/Tag.model";
+import { api } from "@src/services/api.service";
+import { Modal } from "antd";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import styled from "styled-components";
 export type FormItemName = "title" | "intro" | "category" | "tag";
 export type FormValue = { [key in FormItemName]: string };
+
+const Input = styled.input`
+  outline: 2px solid #1890ff;
+  border: none;
+  border-radius: 2px;
+  width: 150px;
+`;
+
+const Select = styled.select`
+  outline: 2px solid #1890ff;
+  border: none;
+  border-radius: 2px;
+  width: 150px;
+`;
+
 const SubmitModel: React.FC<any> = (props) => {
   const { isModalOpen, setIsModalOpen, handleForm } = props;
   const formValue: FormValue = {
@@ -21,17 +29,17 @@ const SubmitModel: React.FC<any> = (props) => {
     category: "",
     tag: "",
   };
-  const [categoryList, setCategoryList] = useState<Category[]>([]);
-  const [tagList, setTagList] = useState<Tag[]>([]);
-
+  const [tagList, setTagList] = useState<Tag[] | undefined[]>([]);
+  const [categoryList, setCategoryList] = useState<Category[] | undefined[]>(
+    []
+  );
+ 
   useEffect(() => {
     api.getCategory().then((value) => setCategoryList(value));
     api.getTag().then((value) => setTagList(value));
-    return () => {};
+    return () => {
+    };
   }, []);
-  // const formRef = useRef(null);
-  // const titleRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null);
-  // const introRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null);
 
   const handleOk = () => {
     handleForm(formValue);
@@ -43,10 +51,8 @@ const SubmitModel: React.FC<any> = (props) => {
   };
 
   const handleChange = (formItemName: FormItemName) => {
-    console.log(formItemName);
     return (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       formValue[formItemName] = event.target.value;
-      console.log(formValue);
     };
   };
 
@@ -63,7 +69,7 @@ const SubmitModel: React.FC<any> = (props) => {
           <p>
             <label htmlFor="title">
               标题：
-              <input
+              <Input
                 onChange={handleChange("title")}
                 type="text"
                 id="title"
@@ -77,7 +83,7 @@ const SubmitModel: React.FC<any> = (props) => {
           <p>
             <label htmlFor="intro">
               简介：
-              <input
+              <Input
                 onChange={handleChange("intro")}
                 type="text"
                 id="intro"
@@ -91,30 +97,33 @@ const SubmitModel: React.FC<any> = (props) => {
           <p>
             <label htmlFor="category">
               分类：
-              <select
+              <Select
                 onChange={handleChange("category")}
                 name="category"
                 id="category"
               >
-                {categoryList.map((category) => {
-                  return (
+                {
+                categoryList.map((category) => {
+                  return category ? (
                     <option value={category.id}>
                       {category.category_name}
                     </option>
+                  ) : (
+                    <option></option>
                   );
                 })}
-              </select>
+              </Select>
             </label>
           </p>
           {/* 标签 */}
           <p>
             <label htmlFor="tag">
               标签：
-              <select onChange={handleChange("tag")} name="tag" id="tag">
+              <Select onChange={handleChange("tag")} name="tag" id="tag">
                 {tagList.map((tag) => {
-                  return <option value={tag.id}>{tag.tag_name}</option>;
+                  return tag?<option value={tag.id}>{tag.tag_name}</option>:<option></option>;
                 })}
-              </select>
+              </Select>
             </label>
           </p>
         </form>

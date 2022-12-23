@@ -83,7 +83,7 @@ export default function CMS() {
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            DCMS ©2022 Created by{" "}
+            DCMS ©2022 Created by
             <a href="https://github.com/Delta1035" target="_black">
               Delta
             </a>

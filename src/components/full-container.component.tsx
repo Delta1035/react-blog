@@ -1,8 +1,15 @@
-export const FullContainer: React.FC = (element) => {
+import styled from "styled-components";
+
+const FullView = styled.div`
+  width: 100%;
+  height: 100%;
+`
+export const FullContainer: React.FC = (props) => {
     return (
       <>
-        <div className=" h-full w-full">
-        </div>
+        <FullView>
+          {}
+        </FullView>
       </>
     );
   };

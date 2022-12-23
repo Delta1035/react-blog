@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: 14.17.6
         cache: "pnpm"
-#         cache: "npm"
+         # cache: "npm"
     - name: "show nodejs version"
       run: node -v
     - name: install dependency

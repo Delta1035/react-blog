@@ -1,6 +1,6 @@
-import { Article } from "@src/blog/models/Article.model";
-import { Category } from "@src/blog/models/Category.model";
-import { Tag } from "@src/blog/models/Tag.model";
+import { Article } from "@src/models/Article.model";
+import { Category } from "@src/models/Category.model";
+import { Tag } from "@src/models/Tag.model";
 import { httpClient } from "./base-api-config.service";
 class Api {
   getArticle():Promise<Article[]> {
@@ -8,7 +8,7 @@ class Api {
   }
 
   getCategory():Promise<Category[]> {
-    return httpClient.get("/category");
+    return httpClient.get<Category[],Category[],Category[]>("/category");
   }
 
   getTag():Promise<Tag[]>{

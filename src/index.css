@@ -1,6 +1,25 @@
-@import url('../node_modules/antd/dist/antd.css');
+@import url("../node_modules/antd/dist/antd.css");
+@font-face {
+  font-family: "xiao nai nao";
+  src: url(/src/assets/fonts/小可奶酪体.ttf);
+}
+
+@font-face {
+  font-family: "xi xian ti";
+  src: url(/src/assets/fonts/庞门正道细线体.ttf);
+}
+
+@font-face {
+  font-family: "mai yuan ti";
+  src: url(/src/assets/fonts/荆南麦圆体.ttf);
+}
+
+@font-face {
+  font-family: "lx regular";
+  src: url(/src/assets/fonts/LxgwMarkerGothic-Regular.ttf);
+}
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "xiao nai nao", Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -30,7 +49,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-html,body,#root{
+html,
+body,
+#root {
   width: 100%;
   height: 100%;
 }

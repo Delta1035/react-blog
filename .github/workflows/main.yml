@@ -42,10 +42,7 @@ jobs:
           password: ${{secrets.PASSWORD}}
           localDir: "dist"
           remoteDir: "react-blog"
-  build_docker_image:
-    name: "login deploy server"
-    runs-on: ubuntu-latest
-    steps:
+      # docker相关操作
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set up QEMU
@@ -63,3 +60,4 @@ jobs:
           context: .
           push: true
           tags: 528491526/blog:latest
+

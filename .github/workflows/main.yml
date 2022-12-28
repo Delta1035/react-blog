@@ -54,7 +54,7 @@ jobs:
           echo "docker用户名"
           echo ${{secrets.DOCKERHUB_USERNAME}}
           echo ${{secrets.DOCKERHUB_TOKEN}}
-      -name: show pwd
+      - name: show pwd
         run: |
           echo pwd
       - name: Login to Docker Hub

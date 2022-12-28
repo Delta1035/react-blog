@@ -25,23 +25,23 @@ jobs:
         # run: npm i
       - name: run build
         run: npm run build
-      - name: show secret variable
-        run: |
-          echo ${{secrets.FTP_HOST}}
-          echo ${{secrets.FTP_USER}}
-          echo ${{secrets.FTP_PASSWORD}}
-          echo ${{secrets.ftp.FTP_PASSWORD}}
-          echo ${{secrets.HOST}}
-          echo ${{secrets.USER}}
-          echo ${{secrets.PASSWORD}}
-      - name: ftp-action
-        uses: sebastianpopp/ftp-action@v2.0.0
-        with:
-          host: ${{secrets.HOST}}
-          user: ${{secrets.USER}}
-          password: ${{secrets.PASSWORD}}
-          localDir: "dist"
-          remoteDir: "react-blog"
+      # - name: show secret variable
+      #   run: |
+      #     echo ${{secrets.FTP_HOST}}
+      #     echo ${{secrets.FTP_USER}}
+      #     echo ${{secrets.FTP_PASSWORD}}
+      #     echo ${{secrets.ftp.FTP_PASSWORD}}
+      #     echo ${{secrets.HOST}}
+      #     echo ${{secrets.USER}}
+      #     echo ${{secrets.PASSWORD}}
+      # - name: ftp-action
+      #   uses: sebastianpopp/ftp-action@v2.0.0
+      #   with:
+      #     host: ${{secrets.HOST}}
+      #     user: ${{secrets.USER}}
+      #     password: ${{secrets.PASSWORD}}
+      #     localDir: "dist"
+      #     remoteDir: "react-blog"
       # docker相关操作
       - name: Checkout
         uses: actions/checkout@v3

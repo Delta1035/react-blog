@@ -30,15 +30,6 @@ jobs:
         with: 
           name: dist
           path: dist
-      # - name: show secret variable
-      #   run: |
-      #     echo ${{secrets.FTP_HOST}}
-      #     echo ${{secrets.FTP_USER}}
-      #     echo ${{secrets.FTP_PASSWORD}}
-      #     echo ${{secrets.ftp.FTP_PASSWORD}}
-      #     echo ${{secrets.HOST}}
-      #     echo ${{secrets.USER}}
-      #     echo ${{secrets.PASSWORD}}
       # - name: ftp-action
       #   uses: sebastianpopp/ftp-action@v2.0.0
       #   with:
@@ -61,10 +52,10 @@ jobs:
       - name: show pwd
         run: pwd
       # docker相关操作
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+      # - name: Checkout
+      #   uses: actions/checkout@v3
+      # - name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v2
       # 有bug
       # - name: Set up Docker Buildx
       #   uses: docker/setup-buildx-action@v2

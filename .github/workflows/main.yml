@@ -50,7 +50,7 @@ jobs:
   build-docker-image:
     name: build docker image
     # 获取install_dependency_job 缓存的工件
-    need: install_dependency_job
+    needs: install_dependency_job
     runs-on: ubuntu-latest
     steps:
       - name: download dist

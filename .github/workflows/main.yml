@@ -5,7 +5,7 @@ on:
 
 jobs:
   install_dependency_job:
-    name: deploy blog
+    name: build blog 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -25,6 +25,11 @@ jobs:
         # run: npm i
       - name: run build
         run: npm run build
+      - name: Archive production artifacts
+        uses: action/upload-artifact@v3
+        with: 
+          name: dist
+          path: dist
       # - name: show secret variable
       #   run: |
       #     echo ${{secrets.FTP_HOST}}
@@ -42,6 +47,17 @@ jobs:
       #     password: ${{secrets.PASSWORD}}
       #     localDir: "dist"
       #     remoteDir: "react-blog"
+  build-docker-image:
+    name: build docker image
+    # 获取install_dependency_job 缓存的工件
+    need: install_dependency_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: download dist
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: ./dist
       # docker相关操作
       - name: Checkout
         uses: actions/checkout@v3
@@ -49,14 +65,6 @@ jobs:
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      # - name: show docker secret
-      #   run: |
-      #     echo "docker用户名"
-      #     echo ${{secrets.DOCKERHUB_USERNAME}}
-      #     echo ${{secrets.DOCKERHUB_TOKEN}}
-      # - name: show pwd
-      #   run: |
-      #     echo pwd
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
@@ -80,17 +88,15 @@ jobs:
       #     script: |
       #       docker rm -f blog:latest
       #       docker rmi -f blog:latest
-      #       docker pull 628491526/blog
+      #       docker pull 528491526/blog
       #       docker run --name blog -p 8084:8080 -d blog
-        - name: executing remote ssh commands using password
-          use: garygrossgarten/github-action-ssh@release
-          with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.SSH_USERNAME }}
-            passphrase: ${{ secrets.SSH_PASSWORD }}
-            port : ${{ secrets.SSH_PORT}}
-            command: |
-              docker rm -f blog:latest
-              docker rmi -f blog:latest
-              docker pull 628491526/blog
-              docker run --name blog -p 8084:8080 -d blog
+      - name: executing remote ssh commands using password
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          passphrase: ${{ secrets.SSH_PASSWORD }}
+          port : ${{ secrets.SSH_PORT}}
+          command: |
+            docker pull 528491526/blog
+            docker run --name blog -p 8084:80 -d 528491526/blog

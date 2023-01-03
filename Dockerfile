@@ -8,6 +8,7 @@ LABEL auth_name="delta"
 # RUN echo '来自本地构建的nginx镜像' > /usr/share/nginx/html/index.html
 # 将dist目录的文件复制到html文件
 # ADD ./dist /usr/share/nginx/html
-ADD /home/runner/work/react-blog/react-blog/dist /usr/share/nginx/html
+RUN pwd
+COPY ./dist /usr/share/nginx/html
 # 复制nginx的配置文件
-ADD ./nginx-custom.conf /etc/nginx/conf.d/nginx-custom.conf
+COPY ./nginx-custom.conf /etc/nginx/conf.d/nginx-custom.conf

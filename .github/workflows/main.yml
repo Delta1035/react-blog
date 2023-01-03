@@ -58,6 +58,8 @@ jobs:
         with:
           name: dist
           path: ./dist
+      - name: show pwd
+        run: pwd
       # docker相关操作
       - name: Checkout
         uses: actions/checkout@v3

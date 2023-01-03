@@ -80,7 +80,7 @@ jobs:
       #     script: |
       #       docker rm -f blog:latest
       #       docker rmi -f blog:latest
-      #       docker pull 628491526/blog
+      #       docker pull 528491526/blog
       #       docker run --name blog -p 8084:8080 -d blog
       - name: executing remote ssh commands using password
         uses: garygrossgarten/github-action-ssh@release
@@ -91,5 +91,5 @@ jobs:
           port : ${{ secrets.SSH_PORT}}
           command: |
             docker rmi -f blog:latest
-            docker pull 628491526/blog
+            docker pull 528491526/blog
             docker run --name blog -p 8084:8080 -d blog

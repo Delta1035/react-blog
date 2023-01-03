@@ -49,6 +49,8 @@ jobs:
         with:
           name: dist
           path: ./dist
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: show pwd
         run: pwd
       # docker相关操作

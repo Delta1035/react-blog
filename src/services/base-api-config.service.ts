@@ -3,7 +3,7 @@ import axios from "axios";
 import { ApiResponse } from "./types/response";
 
 export const httpClient = axios.create({
-  baseURL: "https://127.0.0.1:3000",
+  baseURL: "http://127.0.0.1:3000",
   timeout: 5000,
   headers: {},
 });

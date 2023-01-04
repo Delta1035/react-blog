@@ -78,7 +78,7 @@ jobs:
           tags: 528491526/blog:latest
       # 登录部署服务器 拉取镜像并运行
       - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v0.1.6
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USERNAME }}

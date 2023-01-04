@@ -4,11 +4,71 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="red"/>
+    <meta name="theme-color" content="red" />
     <title>Vite + React + TS</title>
+    <style>
+      .loading-container{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+      }
+      .pre-loading{
+        position: absolute;
+        width: 30%;
+        height: 30%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+
+        display: flex;
+        justify-content: center;
+      }
+      .line {
+        width: 10px;
+        height: 50px;
+        background-color: rgba(27, 175, 219, 0.7);
+        border-radius: 5px;
+        display: inline-block;
+        margin: 0 5px;
+      }
+      @keyframes loading {
+        0% {
+          transform: scaleY(0.5);
+        }
+        50% {
+          transform: scaleY(1);
+        }
+        100% {
+          transform: scaleY(0.5);
+        }
+      }
+      .one {
+        animation: loading 1s ease-in-out 0.5s infinite;
+      }
+      .two {
+        animation: loading 1s ease-in-out 0.6s infinite;
+      }
+      .three {
+        animation: loading 1s ease-in-out 0.7s infinite;
+      }
+      .four {
+        animation: loading 1s ease-in-out 0.8s infinite;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading-container">
+        <div class="pre-loading">
+          <div class="one line"></div>
+          <div class="two line"></div>
+          <div class="three line"></div>
+          <div class="four line"></div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

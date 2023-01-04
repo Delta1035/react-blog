@@ -10,4 +10,4 @@ LABEL auth_name="delta"
 # ADD ./dist /usr/share/nginx/html
 COPY ./dist /usr/share/nginx/html
 # 复制nginx的配置文件
-COPY ./nginx-custom.conf /etc/nginx/conf.d/nginx-custom.conf
+COPY ./default.conf /etc/nginx/conf.d/default.conf

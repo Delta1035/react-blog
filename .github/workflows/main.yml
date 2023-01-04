@@ -92,10 +92,9 @@ jobs:
       - name: executing remote ssh commands using password
         uses: garygrossgarten/github-action-ssh@release
         with:
-          host: ${{ secrets.HOST }}
+          host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           passphrase: ${{ secrets.SSH_PASSWORD }}
-          privateKey: ${{ secrets.SSH_KEY}}
           port : ${{ secrets.SSH_PORT}}
           command: |
             docker pull 528491526/blog

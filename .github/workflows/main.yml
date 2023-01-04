@@ -85,6 +85,9 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port : ${{ secrets.SSH_PORT}}
           command: |
+            docker ps -a 
+            docker rm -f react-blog
+            docker rmi -f 528491526/blog
             docker pull 528491526/blog
             docker run --name blog -p 8084:80 -d 528491526/blog
 

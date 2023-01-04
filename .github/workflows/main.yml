@@ -44,7 +44,10 @@ jobs:
     needs: install_dependency_job
     runs-on: ubuntu-latest
     steps:
-          # docker相关操作
+        
+      # docker相关操作
+      # 注意 先checkout 再download 上一个job upload artifact
+      # checkout 将当前git项目作为当前工作目录
       - name: Checkout
         uses: actions/checkout@v3
       - name: download dist
@@ -56,11 +59,6 @@ jobs:
         run: ls -R
       - name: show pwd
         run: pwd
-      # docker相关操作
-      # 注意 先checkout 再download 上一个job upload artifact
-      # checkout 将当前git项目作为当前工作目录
-      - name: Checkout
-        uses: actions/checkout@v3
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v2
       # 有bug

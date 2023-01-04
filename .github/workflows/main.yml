@@ -54,6 +54,8 @@ jobs:
       - name: show pwd
         run: pwd
       # docker相关操作
+      # 注意 先checkout 再download 上一个job upload artifact
+      # checkout 将当前git项目作为当前工作目录
       - name: Checkout
         uses: actions/checkout@v3
       # - name: Set up QEMU

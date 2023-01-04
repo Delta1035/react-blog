@@ -89,15 +89,15 @@ jobs:
       #     script: |
       #       docker pull 528491526/blog
       #       docker run --name blog -p 8084:8080 -d blog
-       - name: executing remote ssh commands using password
-         uses: garygrossgarten/github-action-ssh@release
-         with:
-           host: ${{ secrets.HOST }}
-           username: ${{ secrets.SSH_USERNAME }}
-           passphrase: ${{ secrets.SSH_PASSWORD }}
-           privateKey: ${{ secrets.SSH_KEY}}
-           port : ${{ secrets.SSH_PORT}}
-           command: |
-             docker pull 528491526/blog
-             docker run --name blog -p 8084:80 -d 528491526/blog
+      - name: executing remote ssh commands using password
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          passphrase: ${{ secrets.SSH_PASSWORD }}
+          privateKey: ${{ secrets.SSH_KEY}}
+          port : ${{ secrets.SSH_PORT}}
+          command: |
+            docker pull 528491526/blog
+            docker run --name blog -p 8084:80 -d 528491526/blog
 

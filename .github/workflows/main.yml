@@ -24,7 +24,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         # run: npm i
       - name: set environment to resolve the problem of js heap out of memory
-        run: export NODE_OPTION=--max_old_space_size=4096
+        run: export NODE_OPTIONS=--max_old_space_size=4096
       - name: run build
         run: npm run build
       - name: Archive production artifacts

@@ -1,7 +1,11 @@
 import { api } from '@src/services/api.service'
 import { Pagination } from 'antd';
 import React, { useState } from 'react'
-
+import styled from 'styled-components';
+const List= styled.div`
+  display: flex;
+  justify-content: center;
+`
 export default function articleList() {
   const [index,setIndex] = useState(1);
   const [size,setSize] = useState(10);
@@ -12,7 +16,7 @@ export default function articleList() {
 
   return (
     <div>
-      <Pagination size="small" total={50} showSizeChanger showQuickJumper />
+      <Pagination size="small" total={50} />
     </div>
   )
 }

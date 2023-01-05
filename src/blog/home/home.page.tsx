@@ -6,7 +6,9 @@ const Home: React.FC = ({}) => {
   return (
     <div className="home">
       <header>
-        <nav></nav>
+        <h1>Delta的博客</h1>
+        <nav>
+        </nav>
       </header>
       <div className="content">
         <aside></aside>

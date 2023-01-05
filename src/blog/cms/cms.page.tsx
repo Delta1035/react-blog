@@ -57,10 +57,18 @@ const items: MenuItem[] = [
   getItem(<Link to="tags">标签</Link>, "tag", <TagsOutlined />),
   getItem(<Link to="three">three.js demo</Link>, "three", <TagsOutlined />),
 ];
+
+// 登出
 const handleLogout = (keycloak: KeycloakInstance) => {
   keycloak.logout();
   return () => {};
 };
+
+// 跳转home
+const handleNavToHome = ()=>{
+  
+}
+
 export default function CMS() {
   const [collapsed, setCollapsed] = useState(false);
   let keycloak: KeycloakInstance;

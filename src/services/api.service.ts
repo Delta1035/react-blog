@@ -3,8 +3,8 @@ import { Category } from "@src/models/Category.model";
 import { Tag } from "@src/models/Tag.model";
 import { httpClient } from "./base-api-config.service";
 class Api {
-  getArticle():Promise<Article[]> {
-    return httpClient.get("/article");
+  getArticle(skip:number,take:number):Promise<Article[]> {
+    return httpClient.get(`/article/${skip}/${take}`);
   }
 
   getCategory():Promise<Category[]> {

@@ -16,7 +16,7 @@ import Register from "./components/register";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to={"/cms"} />,
+    element: <Navigate to={"/home"} />,
     errorElement: <ErrorPage />,
   },
   {

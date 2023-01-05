@@ -28,7 +28,7 @@ const App: React.FC<AppProps> = (props:AppProps) => {
         console.log("Failed to refresh token");
       });
     },0)
-    return <div>{props?.children}</div>;
+    return <div style={{width:'100%',height:'100%'}}>{props?.children}</div>;
   };
   return (
     <>

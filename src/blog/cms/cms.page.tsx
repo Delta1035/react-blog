@@ -7,8 +7,8 @@ import {
   TagsOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, MenuProps } from "antd";
-import React, { useContext, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "./cms.page.css";
 import avatar from "../../assets/images/avatar.jpg";
 import { GlobalContext, GlobalContextValue } from "@src/context/GlobalContext";
@@ -58,36 +58,33 @@ const items: MenuItem[] = [
   getItem(<Link to="three">three.js demo</Link>, "three", <TagsOutlined />),
 ];
 
-// 登出
-const handleLogout = (keycloak: KeycloakInstance) => {
-  keycloak.logout();
-  return () => {};
-};
-
-// 跳转home
-const handleNavToHome = ()=>{
-  
-}
-
 export default function CMS() {
   const [collapsed, setCollapsed] = useState(false);
-  let keycloak: KeycloakInstance;
+  const navigate = useNavigate();
+
   const handleLogoAction = (value: GlobalContextValue) => {
-    keycloak = value.keycloak;
+    const { keycloak } = value;
+    const handleLogout = (keycloak: KeycloakInstance) => {
+      return () => {
+        keycloak.logout();
+      };
+    };
+
+    const handleNavToHome = () => {
+      console.log("click");
+      navigate("/home");
+    };
     return (
       <div className="logo">
         <img src={avatar} alt="avatar" />
         <ul className="logo-menu">
-          <li onClick={handleLogout}>登出</li>
-          <li>主页</li>
+          <li onClick={handleLogout(keycloak)}>登出</li>
+          <li onClick={handleNavToHome}>主页</li>
         </ul>
       </div>
     );
   };
 
-  const handleLogout = () => {
-    keycloak.logout();
-  };
   return (
     <>
       <Layout style={{ minHeight: "100vh" }}>

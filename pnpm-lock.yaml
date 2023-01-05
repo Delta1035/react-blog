@@ -16,6 +16,7 @@ specifiers:
   axios: ^1.1.2
   dotenv: ^16.0.3
   katex: ^0.16.2
+  keycloak-js: ^20.0.2
   localforage: ^1.10.0
   match-sorter: ^6.3.1
   mermaid: ^9.1.7
@@ -39,6 +40,7 @@ dependencies:
   axios: 1.1.3
   dotenv: 16.0.3
   katex: 0.16.2
+  keycloak-js: 20.0.2
   localforage: 1.10.0
   match-sorter: 6.3.1
   mermaid: 9.1.7
@@ -744,6 +746,10 @@ packages:
 
   /bail/2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
+    dev: false
+
+  /base64-js/1.5.1:
+    resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: false
 
   /bcp-47-match/2.0.2:
@@ -1935,6 +1941,10 @@ packages:
     resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}
     dev: false
 
+  /js-sha256/0.9.0:
+    resolution: {integrity: sha512-sga3MHh9sgQN2+pJ9VYZ+1LPwXOxuBJBA5nrR5/ofPfuiJBE2hnjsaN8se8JznOmGLN2p49Pe5U/ttafcs/apA==}
+    dev: false
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -1960,6 +1970,13 @@ packages:
     hasBin: true
     dependencies:
       commander: 8.3.0
+    dev: false
+
+  /keycloak-js/20.0.2:
+    resolution: {integrity: sha512-RPLeBdrsB4ybc2tWL5R+tUqdUd62ytZLVT7AWcCCqMWKuQ0AbmrOtGaPnnWMzS/3XJH447nDq1ulUOGzpj41LQ==}
+    dependencies:
+      base64-js: 1.5.1
+      js-sha256: 0.9.0
     dev: false
 
   /khroma/2.0.0:

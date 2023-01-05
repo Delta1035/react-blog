@@ -7,9 +7,12 @@ import {
   TagsOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, MenuProps } from "antd";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import "./cms.page.css";
+import avatar from "../../assets/images/avatar.jpg";
+import { GlobalContext, GlobalContextValue } from "@src/context/GlobalContext";
+import { KeycloakInstance } from "keycloak-js";
 const { Content, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -54,9 +57,29 @@ const items: MenuItem[] = [
   getItem(<Link to="tags">标签</Link>, "tag", <TagsOutlined />),
   getItem(<Link to="three">three.js demo</Link>, "three", <TagsOutlined />),
 ];
+const handleLogout = (keycloak: KeycloakInstance) => {
+  keycloak.logout();
+  return () => {};
+};
 export default function CMS() {
   const [collapsed, setCollapsed] = useState(false);
+  let keycloak: KeycloakInstance;
+  const handleLogoAction = (value: GlobalContextValue) => {
+    keycloak = value.keycloak;
+    return (
+      <div className="logo">
+        <img src={avatar} alt="avatar" />
+        <ul className="logo-menu">
+          <li onClick={handleLogout}>登出</li>
+          <li>主页</li>
+        </ul>
+      </div>
+    );
+  };
 
+  const handleLogout = () => {
+    keycloak.logout();
+  };
   return (
     <>
       <Layout style={{ minHeight: "100vh" }}>
@@ -65,7 +88,12 @@ export default function CMS() {
           collapsed={collapsed}
           onCollapse={(value) => setCollapsed(value)}
         >
-          <div className="logo" />
+          <GlobalContext.Consumer>
+            {(value: GlobalContextValue) => {
+              return handleLogoAction(value);
+            }}
+          </GlobalContext.Consumer>
+
           <Menu
             theme="dark"
             defaultSelectedKeys={["1"]}

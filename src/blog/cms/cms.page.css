@@ -16,3 +16,49 @@
   width: 100%;
   height: 100%;
 }
+.logo{
+  color: var(--text-color);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 20px 0;
+  position: relative;
+}
+.logo>img{
+  object-fit: contain;
+  height: 100%;
+  border-radius: 50% 50%;
+}
+.logo>img:hover+.logo-menu,
+.logo-menu:hover
+{
+  visibility: visible;
+  /* transition: all 1s ease-in-out; */
+}
+.logo-menu{
+  visibility: hidden;
+  position: absolute;
+  left: 80%;
+  top: center;
+  /* border: 1px solid red; */
+  background-color: var(--text-color);
+  color: var(--low-blue);
+  border-radius: 2%;
+}
+.logo-menu::after{
+  content:"";
+  position: absolute;
+  left: -20px;
+  top: calc(50% - 10px);
+  border: 10px solid var(--text-color);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.logo-menu>li{
+  cursor: pointer;
+  /* text-align: center; */
+  width: 100%;
+  padding: 5px;
+}

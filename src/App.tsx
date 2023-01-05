@@ -1,14 +1,42 @@
-const App: React.FC = () => {
+import React, { PropsWithChildren } from "react";
+import { GlobalContext, GlobalContextValue } from "./context/GlobalContext";
+export interface AppProps {
+  children?:React.ReactNode
+}
+const App: React.FC<AppProps> = (props:AppProps) => {
+  const initKeycloak = (value: GlobalContextValue) => {
+    const { keycloak } = value;
+    console.log('keycloak',keycloak);
+    
+    keycloak
+      .init({ onLoad: "login-required" })
+      .then(function (authenticated) {
+        console.log(authenticated ? "authenticated" : "not authenticated");
+      })
+      .catch(function () {
+        console.log("failed to initialize");
+      });
+
+    setTimeout(function(){
+      keycloak
+      .updateToken(30)
+      .then(function (authentication) {
+        console.log('authentication :>> ',authentication);
+        // loadData();
+      })
+      .catch(function () {
+        console.log("Failed to refresh token");
+      });
+    },0)
+    return <div>{props?.children}</div>;
+  };
   return (
     <>
-      <div className="w-full h-full">
-        {/* <Routes>
-          <Route path="/" element={<CMS />}></Route>
-          <Route path="/cms" element={<CMS />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-        </Routes>
-        <Outlet></Outlet> */}
-      </div>
+      <GlobalContext.Consumer>
+        {(value: GlobalContextValue) => {
+          return initKeycloak(value);
+        }}
+      </GlobalContext.Consumer>
     </>
   );
 };

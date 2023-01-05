@@ -18,13 +18,16 @@
   font-family: "lx regular";
   src: url(/src/assets/fonts/LxgwMarkerGothic-Regular.ttf);
 }
+
 :root {
+  --text-color: rgba(255, 255, 255, 0.87);
+  --low-blue: #002140;
   font-family: "xiao nai nao", Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -54,4 +57,11 @@ body,
 #root {
   width: 100%;
   height: 100%;
+}
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

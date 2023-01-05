@@ -105,7 +105,7 @@ const SubmitModel: React.FC<any> = (props) => {
                 {
                 categoryList.map((category) => {
                   return category ? (
-                    <option value={category.id}>
+                    <option key={category.category_name} value={category.id}> 
                       {category.category_name}
                     </option>
                   ) : (
@@ -121,7 +121,7 @@ const SubmitModel: React.FC<any> = (props) => {
               标签：
               <Select onChange={handleChange("tag")} name="tag" id="tag">
                 {tagList.map((tag) => {
-                  return tag?<option value={tag.id}>{tag.tag_name}</option>:<option></option>;
+                  return tag?<option key={tag.tag_name} value={tag.id}>{tag.tag_name}</option>:<option></option>;
                 })}
               </Select>
             </label>

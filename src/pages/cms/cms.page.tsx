@@ -10,7 +10,7 @@ import { Layout, Menu, MenuProps } from "antd";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import "./cms.page.css";
-import avatar from "../../assets/images/avatar.jpg";
+import avatar from "/assets/images/avatar.jpg";
 import { GlobalContext, GlobalContextValue } from "@src/context/GlobalContext";
 import { KeycloakInstance } from "keycloak-js";
 const { Content, Footer, Sider } = Layout;

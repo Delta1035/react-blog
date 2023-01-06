@@ -2,8 +2,8 @@ export type Article = {
     id: number
     article_name: string
     article_text: string
-    create_time: Date
-    update_time: Date
+    create_time: string
+    update_time: string
     author_id: number
     read_num: number
     like_num: number

@@ -17,7 +17,7 @@ const App: React.FC<AppProps> = (props:AppProps) => {
         console.log("failed to initialize");
       });
 
-    setTimeout(function(){
+    setInterval(function(){
       keycloak
       .updateToken(30)
       .then(function (authentication) {
@@ -27,7 +27,7 @@ const App: React.FC<AppProps> = (props:AppProps) => {
       .catch(function () {
         console.log("Failed to refresh token");
       });
-    },0)
+    },30000)
     return <div style={{width:'100%',height:'100%'}}>{props?.children}</div>;
   };
   return (

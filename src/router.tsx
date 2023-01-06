@@ -1,17 +1,19 @@
+import React from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import ArticleManage from "./blog/cms/article-manage/article-manage.page";
-import Article from "./blog/cms/article-manage/article/article";
-import Draft from "./blog/cms/article-manage/draft/draft.page";
-import Edit from "./blog/cms/article-manage/edit/edit.page";
-import Category from "./blog/cms/category/category.page";
-import CMS from "./blog/cms/cms.page";
-import Tags from "./blog/cms/tag/tag.page";
-import Three from "./blog/cms/three/three.page";
-import Home from "./blog/home/home.page";
+
 import About from "./components/about";
 import ErrorPage from "./components/error.page";
 import Login from "./components/login";
 import Register from "./components/register";
+import ArticleManage from "./pages/cms/article-manage/article-manage.page";
+import Article from "./pages/cms/article-manage/article/article";
+import Draft from "./pages/cms/article-manage/draft/draft.page";
+import Edit from "./pages/cms/article-manage/edit/edit.page";
+import Category from "./pages/cms/category/category.page";
+import CMS from "./pages/cms/cms.page";
+import Tags from "./pages/cms/tag/tag.page";
+import Three from "./pages/cms/three/three.page";
+import Home from "./pages/home/home.page";
 
 const router = createBrowserRouter([
   {
@@ -20,20 +22,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
     path: "/about",
     element: <About />,
   },
   {
     path: "/cms",
-    element: <CMS />,
+    element: <CMS></CMS>,
     children: [
       {
         path: "",

@@ -1,0 +1,27 @@
+.article-cover {
+  display: flex;
+  /* justify-content: start; */
+  width: 100%;
+  margin: 10px 20px;
+}
+
+.article-cover-left {
+  width: 30%;
+}
+.article-cover-right {
+  flex: 1;
+  margin-left: 20px;
+}
+.article-cover-image {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article-cover-image img,
+.article-cover-image .ant-image-img {
+  width: 100%!important;
+  height: 100%!important;
+  object-fit: cover!important;
+}

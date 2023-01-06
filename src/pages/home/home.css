@@ -12,11 +12,11 @@
 .home .content{
     flex: 1;
     display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+
 }
 
-/* .home .content article{
-    max-width: 70%;
-} */
 
 
 @media (max-width:600px) {
@@ -25,5 +25,18 @@
     }
     aside{
         display: none;
+    }
+}
+
+@media (min-width:800px){
+    article{
+        max-width: 60%;
+    }
+    aside{
+        display: block;
+        background-color: gray;
+    }
+    .home .content{
+        justify-content: space-between;
     }
 }

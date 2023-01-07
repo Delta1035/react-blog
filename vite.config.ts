@@ -11,7 +11,7 @@ export default defineConfig({
     alias: {
       "~": path.resolve(__dirname, "./node_modules/"),
       "@src": path.resolve(__dirname, "./src"),
-      "@assets": path.resolve(__dirname, "./assets"),
+      "@public": path.resolve(__dirname, "./public"),
     },
   },
 });

@@ -19,7 +19,7 @@
     "paths": {
       "~/*":["./node_modules/*"],
       "@src/*":["./src/*"],
-      "@assets":["./assets"]
+      "@public":["./public/*"]
     }
   },
   "include": ["src"],

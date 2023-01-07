@@ -2,7 +2,7 @@ import ArticleList from "@src/components/articleList";
 import Footer from "@src/components/footer";
 import React, { Suspense } from "react";
 import "./home.css";
-import delta from "@public/assets/images/delta_header_transparent.png";
+import delta from "@public/assets/images/Delta_header_transparent.png";
 const ArticleListLazyLoadComponent = React.lazy(
   () => import("../../components/articleList")
 );

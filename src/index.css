@@ -89,7 +89,8 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  font-family: "mai yuan ti";
+  background-color: var(--main-bg-color);
+  font-family: "lx regular";
 
 }
 ul,
@@ -102,6 +103,6 @@ li {
 
 @media (max-width:600px)  {
     html,body{
-      overflow: hidden;
+      overflow-x: hidden;
     }
 }

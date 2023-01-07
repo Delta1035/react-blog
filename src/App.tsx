@@ -6,8 +6,6 @@ export interface AppProps {
 const App: React.FC<AppProps> = (props:AppProps) => {
   const initKeycloak = (value: GlobalContextValue) => {
     const { keycloak } = value;
-    console.log('keycloak',keycloak);
-    
     keycloak
       .init({ onLoad: "login-required" })
       .then(function (authenticated) {

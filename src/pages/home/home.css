@@ -4,17 +4,17 @@
     background-color: var(--main-bg-color);
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 }
 .home header{
-    height: 100px;
+    margin-bottom: 20px;
     text-align: center;
+    background: linear-gradient(45deg, #43c1dd, #51a451);
 }
 .home .content{
     flex: 1;
     display: flex;
     justify-content: center;
-    overflow-y: scroll;
-
 }
 
 

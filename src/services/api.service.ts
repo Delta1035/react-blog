@@ -7,6 +7,10 @@ class Api {
     return httpClient.get(`/article/${skip}/${take}`);
   }
 
+  getArticleCount():Promise<number>{
+    return httpClient.get(`/article/count`);
+  }
+
   getCategory():Promise<Category[]> {
     return httpClient.get<Category[],Category[],Category[]>("/category");
   }

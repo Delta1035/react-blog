@@ -16,7 +16,7 @@ httpClient.interceptors.request.use(
   },
   function (error) {
     notification.error({
-      message: JSON.stringify(error),
+      message: JSON.stringify('请求失败'),
     });
     return Promise.reject(error);
   }

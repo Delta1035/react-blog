@@ -2,7 +2,7 @@
  * @Author: Delta_Zheng Delta_Zheng@wistronits.com
  * @Date: 2023-02-02 10:32:59
  * @LastEditors: Delta_Zheng Delta_Zheng@wistronits.com
- * @LastEditTime: 2023-02-02 13:34:29
+ * @LastEditTime: 2023-02-02 15:26:15
  * @FilePath: \react-blog\src\pages\home\articleText.tsx
  * @Description:
  *
@@ -13,7 +13,10 @@ import { api } from "@src/services/api.service";
 import MDEditor from "@uiw/react-md-editor";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import styled from "styled-components";
+const MarkedWrapper = styled.div`
+  padding: 20px 10px;
+`
 export default function articleText() {
   const { id } = useParams();
   const [article, setArticle] = useState<Article>();
@@ -25,7 +28,7 @@ export default function articleText() {
   }, []);
   return (
     <div>
-      <p>
+      <MarkedWrapper>
         {/* {article?.article_text} */}
         {/* <Editor {...{ value:article?.article_text }}></Editor> */}
 
@@ -33,7 +36,7 @@ export default function articleText() {
           source={article?.article_text}
           style={{ whiteSpace: "pre-wrap" }}
         />
-      </p>
+      </MarkedWrapper>
     </div>
   );
 }

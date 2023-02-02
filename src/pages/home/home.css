@@ -4,7 +4,7 @@
     background-color: var(--main-bg-color);
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .home header{
     margin-bottom: 20px;

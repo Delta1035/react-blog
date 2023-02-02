@@ -2,7 +2,8 @@
   display: flex;
   /* justify-content: start; */
   width: 100%;
-  margin: 10px 20px;
+  margin: 10px 0px;
+  padding: 0 20px;
 }
 
 .article-cover-left {

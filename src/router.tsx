@@ -1,7 +1,17 @@
+/*
+ * @Author: Delta_Zheng Delta_Zheng@wistronits.com
+ * @Date: 2022-12-23 13:12:41
+ * @LastEditors: Delta_Zheng Delta_Zheng@wistronits.com
+ * @LastEditTime: 2023-02-02 10:43:14
+ * @FilePath: \react-blog\src\router.tsx
+ * @Description:
+ *
+ */
 import React from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import About from "./components/about";
+import ArticleList from "./components/articleList";
 import ErrorPage from "./components/error.page";
 import Login from "./components/login";
 import Register from "./components/register";
@@ -13,6 +23,7 @@ import Category from "./pages/cms/category/category.page";
 import CMS from "./pages/cms/cms.page";
 import Tags from "./pages/cms/tag/tag.page";
 import Three from "./pages/cms/three/three.page";
+import ArticleText from "./pages/home/articleText";
 import Home from "./pages/home/home.page";
 
 const router = createBrowserRouter([
@@ -69,6 +80,26 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+    children: [
+      {
+        path: "",
+        element: <Navigate to={"article-list"}></Navigate>,
+      },
+      {
+        path: "article-list",
+        element: <ArticleList></ArticleList>,
+      },
+      {
+        path: "article-text",
+        element: <ArticleText></ArticleText>,
+        children: [
+          {
+            path: ":id",
+            element: <div></div>,
+          },
+        ],
+      },
+    ],
   },
 ]);
 

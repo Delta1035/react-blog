@@ -1,7 +1,17 @@
+/*
+ * @Author: Delta_Zheng Delta_Zheng@wistronits.com
+ * @Date: 2023-01-05 17:42:07
+ * @LastEditors: Delta_Zheng Delta_Zheng@wistronits.com
+ * @LastEditTime: 2023-02-02 10:49:53
+ * @FilePath: \react-blog\src\components\articleList.tsx
+ * @Description: 
+ * 
+ */
 import { Article } from "@src/models/Article.model";
 import { api } from "@src/services/api.service";
 import { Pagination, Image, Spin } from "antd";
 import React, { Suspense, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import "./articleList.css";
 const List = styled.div`
@@ -56,7 +66,7 @@ export default function articleList() {
                 </div>
               </div>
               <div className="article-cover-right">
-                <div className="article-title">{article.article_name}</div>
+                <NavLink to={'../article-text/'+article.id}>{article.article_name}</NavLink>
                 <div className="article-publish-time">
                   {new Date(article.create_time).toLocaleDateString()}{" "}
                   {new Date(article.create_time).toLocaleTimeString()}

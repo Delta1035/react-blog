@@ -2,7 +2,7 @@
  * @Author: Delta_Zheng Delta_Zheng@wistronits.com
  * @Date: 2022-12-23 13:12:41
  * @LastEditors: Delta_Zheng Delta_Zheng@wistronits.com
- * @LastEditTime: 2023-02-02 09:25:29
+ * @LastEditTime: 2023-02-02 10:42:19
  * @FilePath: \react-blog\src\pages\home\home.page.tsx
  * @Description: 
  * 
@@ -12,6 +12,7 @@ import Footer from "@src/components/footer";
 import React, { Suspense } from "react";
 import "./home.css";
 import delta from "@public/assets/images/Delta_header_transparent.png";
+import { Outlet } from "react-router-dom";
 const ArticleListLazyLoadComponent = React.lazy(
   () => import("../../components/articleList")
 );
@@ -25,8 +26,8 @@ const Home: React.FC = ({}) => {
       <div className="content">
         <aside></aside>
         <article>
-          <ArticleList></ArticleList>
             {/* <ArticleListLazyLoadComponent></ArticleListLazyLoadComponent> */}
+            <Outlet />
         </article>
         <aside></aside>
       </div>

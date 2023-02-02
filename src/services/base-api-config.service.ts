@@ -1,10 +1,19 @@
+/*
+ * @Author: Delta_Zheng Delta_Zheng@wistronits.com
+ * @Date: 2022-12-23 13:12:41
+ * @LastEditors: Delta_Zheng Delta_Zheng@wistronits.com
+ * @LastEditTime: 2023-02-02 11:12:58
+ * @FilePath: \react-blog\src\services\base-api-config.service.ts
+ * @Description: 
+ * 
+ */
 import { notification } from "antd";
 import axios from "axios";
 import { ApiResponse } from "./types/response";
 
 export const httpClient = axios.create({
-  // baseURL: "http://127.0.0.1:8087",
-  baseURL: "http://124.221.95.189:8087",
+  baseURL: "http://127.0.0.1:8087",
+  // baseURL: "http://124.221.95.189:8087",
   timeout: 5000,
   headers: {},
 });

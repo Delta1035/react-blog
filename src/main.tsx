@@ -1,4 +1,13 @@
-import React from "react";
+/*
+ * @Author: delta 528491526@qq.com
+ * @Date: 2022-10-29 17:47:44
+ * @LastEditors: delta 528491526@qq.com
+ * @LastEditTime: 2023-02-04 22:09:45
+ * @FilePath: \react-blog\src\main.tsx
+ * @Description:
+ *
+ */
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
@@ -22,7 +31,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     }}
   >
     <App>
-      <RouterProvider router={router} />
+      <Suspense fallback={<div>loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </App>
   </GlobalContext.Provider>
   // </React.StrictMode>

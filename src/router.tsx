@@ -1,8 +1,8 @@
 /*
  * @Author: Delta_Zheng Delta_Zheng@wistronits.com
  * @Date: 2022-12-23 13:12:41
- * @LastEditors: Delta_Zheng Delta_Zheng@wistronits.com
- * @LastEditTime: 2023-02-02 10:43:14
+ * @LastEditors: delta 528491526@qq.com
+ * @LastEditTime: 2023-02-04 22:06:47
  * @FilePath: \react-blog\src\router.tsx
  * @Description:
  *
@@ -25,7 +25,8 @@ import Tags from "./pages/cms/tag/tag.page";
 import Three from "./pages/cms/three/three.page";
 import ArticleText from "./pages/home/articleText";
 import Home from "./pages/home/home.page";
-
+const CMSComponent = React.lazy(() => import("./pages/cms/cms.page"));
+const HOMEComponent = React.lazy(()=>import('./pages/home/home.page'));
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +39,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/cms",
-    element: <CMS></CMS>,
+    element: <CMSComponent />,
+    // element: <CMS></CMS>,
     children: [
       {
         path: "",
@@ -79,7 +81,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <Home />,
+    element: <HOMEComponent />,
     children: [
       {
         path: "",

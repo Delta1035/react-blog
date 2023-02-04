@@ -2,7 +2,7 @@
  * @Author: Delta_Zheng Delta_Zheng@wistronits.com
  * @Date: 2022-12-23 13:12:41
  * @LastEditors: delta 528491526@qq.com
- * @LastEditTime: 2023-02-04 22:06:47
+ * @LastEditTime: 2023-02-04 22:51:56
  * @FilePath: \react-blog\src\router.tsx
  * @Description:
  *
@@ -27,6 +27,7 @@ import ArticleText from "./pages/home/articleText";
 import Home from "./pages/home/home.page";
 const CMSComponent = React.lazy(() => import("./pages/cms/cms.page"));
 const HOMEComponent = React.lazy(()=>import('./pages/home/home.page'));
+const ArticleListComponent = React.lazy(()=>import('./components/articleList'))
 const router = createBrowserRouter([
   {
     path: "/",
@@ -89,7 +90,7 @@ const router = createBrowserRouter([
       },
       {
         path: "article-list",
-        element: <ArticleList></ArticleList>,
+        element: <ArticleListComponent></ArticleListComponent>,
       },
       {
         path: "article-text",

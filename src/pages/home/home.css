@@ -8,8 +8,12 @@
 }
 .home header{
     margin-bottom: 20px;
+    padding: 20px;
     text-align: center;
     background: linear-gradient(45deg, #43c1dd, #51a451);
+}
+.home header img{
+    max-width: 20%;
 }
 .home .content{
     flex: 1;
